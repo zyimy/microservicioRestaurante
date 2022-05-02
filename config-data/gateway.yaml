@@ -20,10 +20,10 @@ spring:
          - id: pack
            uri: lb://pack
            predicates:
-             - Path=/v1/pack/**
+             - Path=/pack/**
          - id: restaurante
            uri: lb://restaurante
            predicates:
-             - Path=/v1/restaurante/** 
+             - Path=/restaurante/** 
                            
   
