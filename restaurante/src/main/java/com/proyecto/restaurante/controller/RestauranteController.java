@@ -33,4 +33,10 @@ public class RestauranteController {
          }
 
     }
+
+    @PostMapping("/savePack/{idRestaurante}")
+    public ResponseEntity<Pack>ingresarPack(@RequestBody Pack pack,@PathVariable("idRestaurante") int idRestaurante){
+        Pack pack1 = restauranteService.guardarPack(pack,idRestaurante);
+        return ResponseEntity.ok(pack1);
+    }
 }
