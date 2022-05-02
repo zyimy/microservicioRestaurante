@@ -18,7 +18,7 @@ spring:
            enabled: true
        routes:
          - id: pack
-           uri: lb://pack
+           uri: http://localhost:8002/v1/pack
            predicates:
              - Path=/v1/pack/**
          - id: restaurante
