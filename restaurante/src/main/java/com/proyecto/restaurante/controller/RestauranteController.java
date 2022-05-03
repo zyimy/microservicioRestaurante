@@ -39,26 +39,22 @@ public class RestauranteController {
 
     @CircuitBreaker(name = "packsCB", fallbackMethod = "fallBackSavePack")
     @PostMapping("/savePack/{idRestaurante}")
-    public ResponseEntity<Pack>ingresarPack(@RequestBody Pack pack,@PathVariable("idRestaurante") int idRestaurante){
+    public ResponseEntity<Pack>ingresarPack(@RequestBody Pack pack,@PathVariable("idRestaurante") Long idRestaurante){
         Pack pack1 = restauranteService.guardarPack(pack,idRestaurante);
         return ResponseEntity.ok(pack);
     }
 
 
 
-    private ResponseEntity<List<Pack>> fallBackGetPacks(@PathVariable("userId") int userId, RuntimeException e) {
-
-
-
-        return new ResponseEntity("El usuario" + userId + " tiene los coches en el trailer", HttpStatus.OK);
+    private ResponseEntity<List<Pack>> fallBackGetPacks(@PathVariable("idRestaurante") Long idRestaurante, RuntimeException e) {
+        return new ResponseEntity("El usuario" + idRestaurante + " tiene los coches en el trailer", HttpStatus.OK);
 
     }
 
 
-    private ResponseEntity<Pack> fallBackSavePack(@PathVariable("userId") int userId, @RequestBody Pack pack,
+    private ResponseEntity<Pack> fallBackSavePack(@PathVariable("idRestaurante") Long idRestaurante, @RequestBody Pack pack,
                                                 RuntimeException e) {
-
-        return new ResponseEntity("El usuario" + userId + " No  tiene dinero para coches", HttpStatus.OK);
+        return new ResponseEntity("El usuario" + idRestaurante + " No  tiene dinero para coches", HttpStatus.OK);
 
     }
 }

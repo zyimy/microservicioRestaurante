@@ -29,9 +29,9 @@ public class Pack {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecha;
 
-    private int restauranteId;
+    private Long restauranteId;
 
-    public Pack(String nombre, String descripcion, String imagen, String direccion, String status, double precio, String hora_disponible, Date fecha, int restauranteId) {
+    public Pack(String nombre, String descripcion, String imagen, String direccion, String status, double precio, String hora_disponible, Date fecha, Long restauranteId) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.imagen = imagen;

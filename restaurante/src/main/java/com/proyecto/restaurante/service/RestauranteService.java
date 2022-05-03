@@ -33,7 +33,7 @@ public class RestauranteService {
 
     }
 
-    public Pack guardarPack(Pack pack, int idRestaurante){
+    public Pack guardarPack(Pack pack, Long idRestaurante){
         pack.setRestauranteId(idRestaurante);
         return packFeign.savePack(pack);
     }
