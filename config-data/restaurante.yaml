@@ -15,7 +15,7 @@ resilience4j.circuitbreaker:
             registerHealthIndicator: true
             slidingWindowSize: 10
             permittedNumberOfCallsInHalfOpenState: 3
-            slidingWindowType: TIME_BASED
+            slidingWindowType: COUNT_BASED
             minimumNumberOfCalls: 4
             automaticTransitionFromOpenToHalfOpenEnabled: true
             waitDurationInOpenState: 5s
