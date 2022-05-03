@@ -5,14 +5,14 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-//, url = "http://localhost:8002/v1/pack"
 
-@FeignClient(name = "pack")
+
+@FeignClient(name = "pack/pack")
 public interface PackFeign {
 
     @GetMapping("/allPack/{idRestaurante}")
     List<Pack>getPacks(@PathVariable("idRestaurante") Long idRestaurante);
 
-    @PostMapping
+    @PostMapping("/save")
     Pack savePack(@RequestBody Pack pack);
 }

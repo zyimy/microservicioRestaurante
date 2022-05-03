@@ -16,10 +16,10 @@ public class PackController {
     @Autowired
     private PackService packService;
 
-    @PostMapping
+    @PostMapping("/save")
     public ResponseEntity<Pack>save(@RequestBody Pack pack){
         Pack pack1 = packService.savePack(pack);
-        return ResponseEntity.ok(pack1);
+        return ResponseEntity.ok(pack);
     }
 
     @GetMapping("/allPack/{idRestaurante}")
